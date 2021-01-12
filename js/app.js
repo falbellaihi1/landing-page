@@ -51,6 +51,12 @@ function onClickScroll(evt) {
 
 }
 
+function removeClass(elem) {
+
+    elem.className = "";
+
+}
+
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -106,7 +112,21 @@ function setActiveSection() {
      * @type {NodeListOf<HTMLElementTagNameMap[string]>}
      */
     let sections = document.querySelectorAll("section");
-    // loop through all sections
+    let navItems = document.querySelectorAll("li");
+
+    for(const item of navItems) {
+        item.addEventListener("mouseover", function (event) {
+            // highlight the mouseover target
+             item.className = "your-active-class";
+            event.target.style.color = "blue";
+
+            // reset the color after a short delay
+            setTimeout(function () {
+                event.target.style.color = "";
+                 item.className = "";
+            }, 500);
+        }, false);
+    }
 
     sections.forEach(sec => window.addEventListener("scroll", function (e) {
             // whenscrolling...?
@@ -128,14 +148,18 @@ function moveToSection(evt) {
      * function to move to the clicked section in the navbar(menu)
      * @type {NodeListOf<HTMLElementTagNameMap[string]>}
      */
-    let sections = document.querySelectorAll("section"); /// get me all the sections
+    let sections = this.querySelectorAll("section"); /// get me all the sections
     for (const section of sections) { // loop through all sections
         ///make sure all classes are removed if they are not actually actyive
         section.classList.remove("your-active-class");
     }
     let sectionId = evt.target.innerText.replace(/\D/g, ""); // get me only the digits from the inner text
     let elem = document.getElementById(`section${sectionId}`); // get the elementid using the found section id from event target
-    elem.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"}); /// scroll into the element found with smooth transition behavior
+    elem.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest"
+    }); /// scroll into the element found with smooth transition behavior
     elem.className = "your-active-class"; // of course set the class to active
 
 }

@@ -16,18 +16,18 @@ For specific, detailed instructions, look at the project instructions in the Uda
 ##Dependencies
 None
 
-##Introduction 
+## Introduction 
 Landing page containing sections
 Functionalities
 - Scrolling activates highlight on section
 - variable `numSections` located in app.js controlls the number of sections in the page, default(min) is 3
 - Auto generates the navbar links for each section and adds events to all sections to scroll when clicked
 
-##How to run it
+## How to run it
 - Download the project as zip or clone it
 - open the `index.html` in your IDE
 - click on your favorite browser icon
 
 ## Refrences 
-  [stackoverflow] https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport
-  [mozilla foreach] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+  [stackoverflow]: https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  [mozilla foreach]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach

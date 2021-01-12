@@ -35,9 +35,11 @@ const numSections = 10;
 
 function isNearViewPortHelper(elem) {
     const secRec = elem.getBoundingClientRect();
+    const winHight = (window.innerHeight || document.documentElement.clientHeight);
     return (
-        secRec.top >= 0 &&
-        secRec.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        secRec.bottom >= 0 &&
+        secRec.top <= winHight
+
     );
 }
 
@@ -105,10 +107,10 @@ function setActiveSection() {
      */
     let sections = document.querySelectorAll("section");
     // loop through all sections
-    for (const sec of sections) {
-        sec.className = ""; // remove previous classname is exists
-        window.addEventListener("scroll", function (e) {
+
+    sections.forEach(sec => window.addEventListener("scroll", function (e) {
             // whenscrolling...?
+
             if (isNearViewPortHelper(sec)) { // am i near the viewport | the section is within the viewport?
                 sec.className = "your-active-class"; // then set the active class
             } else { // otherwise just remove it
@@ -116,7 +118,8 @@ function setActiveSection() {
             }
 
         })
-    }
+    );
+
 }
 
 // Scroll to anchor ID using scrollTO event
@@ -130,7 +133,7 @@ function moveToSection(evt) {
         ///make sure all classes are removed if they are not actually actyive
         section.classList.remove("your-active-class");
     }
-    let sectionId = evt.target.innerText.replace(/\D/g,""); // get me only the digits from the inner text
+    let sectionId = evt.target.innerText.replace(/\D/g, ""); // get me only the digits from the inner text
     let elem = document.getElementById(`section${sectionId}`); // get the elementid using the found section id from event target
     elem.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"}); /// scroll into the element found with smooth transition behavior
     elem.className = "your-active-class"; // of course set the class to active

@@ -29,5 +29,6 @@ Functionalities
 - click on your favorite browser icon
 
 ## Refrences 
-  [stackoverflow]: https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport
-  [mozilla foreach]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+  [stackoverflow if dom is visiable in current view](https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport)
+  
+  [mozilla foreach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)

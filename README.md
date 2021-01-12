@@ -22,10 +22,18 @@ Functionalities
 - Scrolling activates highlight on section
 - variable `numSections` located in app.js controlls the number of sections in the page, default(min) is 3
 - Auto generates the navbar links for each section and adds events to all sections to scroll when clicked
-
+Files structure:
+    |--Landing-page 
+    |----|--css
+    |       |--styles.css    
+    |----|--index.html
+    |----|--js
+    |       |--app.js
+README.md
 ## How to run it
 - Download the project as zip or clone it
 - open the `index.html` in your IDE
+- make sure `app.js` is called in `index.html` in order for all functionalities to work
 - click on your favorite browser icon
 
 ## Refrences 
